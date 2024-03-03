@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "pc-python-p12"
+version = "0.1.0"
+description = ""
+authors = ["0ddbird <0ddbird@proton.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+sqlmodel = "^0.0.16"
+black = "^24.2.0"
+ruff = "^0.3.0"
+isort = "^5.13.2"
+python-dotenv = "^1.0.1"
+typer = "^0.9.0"
+sentry-sdk = "^1.40.6"
+rich = "^13.7.1"
+passlib = "^1.7.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | build
+  | dist
+  | venv
+)/
+'''
+
+[tool.ruff]
+exclude = [
+    ".direnv",
+    ".git",
+    ".gitignore",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+[tool.isort]
+lines_between_sections = 1
+skip_glob = [
+    ".direnv",
+    ".git",
+    ".gitignore",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "migrations"
+]
+sections = ['FUTURE', 'STDLIB', 'THIRDPARTY', 'FIRSTPARTY', 'LOCALFOLDER']

@@ -1,0 +1,4 @@
+typer
+rich
+sentry_sdk
+sqlmodel
